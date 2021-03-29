@@ -12,6 +12,8 @@ function capitalize(str) {
     return firstLetter + rest
 }
 
+console.log(capitalize('hello world'))
+
 // Challenge 2
 
 // allCaps() - makes all characters uppercase. (this is the same as str.toUpperCase())
@@ -23,6 +25,8 @@ function capitalize(str) {
 function allCaps(str) {
     return str.toUpperCase()
 }
+
+console.log( allCaps('s.e.e.s'))
 
 // Challenge 3
 
@@ -37,3 +41,10 @@ function allCaps(str) {
 // Strategies:
 
 // Use str.split() and split on a ' ' space, loop through each of the strings in the array and use your capitalize() function on each elemen. You can use array.map() here and use your capitalize() function as the callback. Last, use array.join() to join all of the elements into a single string.
+
+function capitalizeWords(str) {
+    const words = str.split(' ')
+    const upperWords = words.map( word => capitalize(word) )
+    return upperWords.join(' ')
+}
+console.log( capitalizeWords('foo bar'))

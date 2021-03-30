@@ -156,14 +156,10 @@ String.prototype.shift = function () {
     return shift(this);
 }
 
-console.log("challenge 8 [shift]: " + shift('reikamoon'))
+console.log("challenge 8 [shift]: " + shift('crimsonsun'))
 
 // Challenge 9
 
 // makeHashTag(str) - This function should convert the given string to a hash tag. A hash tag begins with # and no spaces. Each word in the phrase beginsd with an uppercase letter.
 
 // If the give string has more than three words pick the three longest and make the hash tag from those.
-
-function makeHashTag(str) {
-    const words = str.split(' ')
-}

@@ -107,7 +107,7 @@ String.prototype.kebabCase = function () {
 }
 
 
-console.log("challenge 5 [kebabCase]: " + kebabCase('       my   name  is   mary-ann   i am 27 years old. '))
+console.log("challenge 5 [kebabCase]: " + kebabCase('my name is iori'))
 
 // Challenge 6
 
@@ -126,3 +126,44 @@ String.prototype.snakeCase = function () {
 
 console.log("challenge 6 [snakeCase]: " + snakeCase("Meow meow meow"))
 
+// Challenge 7
+
+// camelCase() - Lowercases the first character of the first word. Then uppercases the first character of all other words, and removes all spaces.
+
+function camelCase(str) {
+    return str.replace(/\W+(.)/g, function(str)
+    {
+      return str.toUpperCase();
+    });
+}
+
+String.prototype.camelCase = function () {
+    return camelCase(this);
+}
+
+console.log("challenge 7 [camelcase]: " + camelCase("hello how are you"))
+
+// Challenge 8
+
+// shift() this method will take the first character of a string and move to the end of a string:
+
+function shift(str) {
+    const firstLetter = str[0]
+    return str.slice(1) + firstLetter;
+}
+
+String.prototype.shift = function () {
+    return shift(this);
+}
+
+console.log("challenge 8 [shift]: " + shift('reikamoon'))
+
+// Challenge 9
+
+// makeHashTag(str) - This function should convert the given string to a hash tag. A hash tag begins with # and no spaces. Each word in the phrase beginsd with an uppercase letter.
+
+// If the give string has more than three words pick the three longest and make the hash tag from those.
+
+function makeHashTag(str) {
+    const words = str.split(' ')
+}

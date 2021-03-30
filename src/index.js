@@ -107,7 +107,7 @@ String.prototype.kebabCase = function () {
 }
 
 
-console.log("challenge 5 [kebabCase]: " + kebabCase('my name is iori'))
+console.log("challenge 5 [kebabCase]: " + kebabCase('meat vegetable meat vegetable'))
 
 // Challenge 6
 
@@ -141,7 +141,7 @@ String.prototype.camelCase = function () {
     return camelCase(this);
 }
 
-console.log("challenge 7 [camelcase]: " + camelCase("hello how are you"))
+console.log("challenge 7 [camelcase]: " + camelCase("camel case"))
 
 // Challenge 8
 

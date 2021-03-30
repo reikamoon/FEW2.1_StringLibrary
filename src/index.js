@@ -12,7 +12,11 @@ function capitalize(str) {
     return firstLetter + rest
 }
 
-console.log(capitalize('hello world'))
+String.prototype.capitalize = function () {
+    return capitalize(this);
+}
+
+console.log( "challenge 1 [capitalize]: " + capitalize('hello world'))
 
 // Challenge 2
 
@@ -26,7 +30,11 @@ function allCaps(str) {
     return str.toUpperCase()
 }
 
-console.log( allCaps('s.e.e.s'))
+String.prototype.allCaps = function () {
+    return allCaps(this);
+}
+
+console.log( "challenge 2 [allCaps]: " + allCaps('s.e.e.s'))
 
 // Challenge 3
 
@@ -47,4 +55,74 @@ function capitalizeWords(str) {
     const upperWords = words.map( word => capitalize(word) )
     return upperWords.join(' ')
 }
-console.log( capitalizeWords('foo bar'))
+
+String.prototype.capitalizeWords = function () {
+    return capitalizeWords(this);
+}
+
+console.log( "challenge 3 [capitalizeWords]: " + capitalizeWords('foo bar'))
+
+// Challenge 4
+
+// removeExtraSpaces() - Removes all spaces from the beginning and end of a String along with any extra spaces in the middle. If more than one space appears in the middle of a string it is replaced by a single space.
+
+function removeExtraSpaces(str) {
+    const trimmed = str.trim()
+    const chars = trimmed.split(' ')
+    const filtered = chars.filter( (c) => c !== '' )
+    return filtered.join(' ')
+}
+
+String.prototype.removeExtraSpaces = function () {
+    return removeExtraSpaces(this);
+}
+
+console.log( "challenge 4 [removeWhiteSpaces]: " + removeExtraSpaces('     hello  world     ') )
+
+// Challenge 5
+
+// kebobCase() - Removes extra spaces and replaces spaces with the hyphen “-“, and makes all characters lowercase.
+
+function kebabCase(str) {
+    const lowercase = str.toLowerCase()
+    const chars = lowercase.split(' ')
+    const filtered = chars.filter((c) => {
+        const code = c.charCodeAt(0)
+        if (code > 96 && code < 123 ) {
+            return true
+        } else if (code > 47 && code < 58) {
+            return true
+        } else if (code === 32|| code  === 45) {
+            return true
+        }
+            return false
+    })
+    // remove whitespace
+    const removeWhitespace = removeExtraSpaces(filtered.join(' '))
+    return removeWhitespace.split(' ').join('-')
+}
+
+String.prototype.kebabCase = function () {
+    return kebabCase(this);
+}
+
+
+console.log("challenge 5 [kebabCase]: " + kebabCase('       my   name  is   mary-ann   i am 27 years old. '))
+
+// Challenge 6
+
+// snakeCase() - Removes extra space and replaces spaces with an underscore “_”, and makes all characters lowercase.
+
+function snakeCase(str) {
+    return str.replace(/\W+/g, " ")
+      .split(/ |\B(?=[A-Z])/)
+      .map(word => word.toLowerCase())
+      .join('_');
+}
+
+String.prototype.snakeCase = function () {
+    return snakeCase(this);
+}
+
+console.log("challenge 6 [snakeCase]: " + snakeCase("Meow meow meow"))
+

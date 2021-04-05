@@ -160,6 +160,20 @@ console.log("challenge 8 [shift]: " + shift('crimsonsun'))
 
 // Challenge 9
 
-// makeHashTag(str) - This function should convert the given string to a hash tag. A hash tag begins with # and no spaces. Each word in the phrase beginsd with an uppercase letter.
+// makeHashTag(str) - This function should convert the given string to a hash tag. A hash tag begins with # and no spaces. Each word in the phrase begins with an uppercase letter.
 
 // If the give string has more than three words pick the three longest and make the hash tag from those.
+function makeHashTag(str) {
+    const str_words = str.split(/ |\B(?=[A-Z])/);
+
+    for (let i = 0; i < str_words.length; i++) {
+        str_words[i] = '#' + str_words[i][0].toUpperCase() + str_words[i].substr(1);
+    }
+    return str_words.join()
+ }
+
+String.prototype.makeHashTag = function() {
+    return makeHashTag(this)
+  }
+
+console.log("challenge 9 [hashtag]: " + makeHashTag('doggy'))

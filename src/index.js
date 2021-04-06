@@ -177,3 +177,16 @@ String.prototype.makeHashTag = function() {
   }
 
 console.log("challenge 9 [hashtag]: " + makeHashTag('doggy'))
+
+
+module.exports = {
+    capitalize,
+    allCaps,
+    capitalizeWords,
+    removeExtraSpaces,
+    kebabCase,
+    snakeCase,
+    camelCase,
+    shift,
+    makeHashTag,
+}

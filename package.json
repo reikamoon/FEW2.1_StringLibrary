@@ -1,6 +1,6 @@
 {
   "name": "my-string-library-aa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "String library for FEW 2.1: Writing JavaScript libraries.",
   "main": "src/index.js",
   "scripts": {

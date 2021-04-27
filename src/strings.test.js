@@ -1,4 +1,4 @@
-const strings = require('./index')
+const strings = require('./index');
 
 test('capitalize', () => {
     expect(strings.capitalize('mochi')).toBe('Mochi')

@@ -1,4 +1,5 @@
-const strings = require('./index');
+const strings = require('../umd/my-string-library-aa')
+
 
 test('capitalize', () => {
     expect(strings.capitalize('mochi')).toBe('Mochi')
